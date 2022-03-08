@@ -104,4 +104,4 @@ Below, we detail each file, what it denotes, and how you can run it:
 
 - `psi_all_comparisons.cpp`: A `full comparison` calculation between 2 datasets using the `VR` set intersection size operator (detailed in the paper as the fastest one for PALISADE). 
 
-To run: `./all_comp ds1_output_0.5.csv ds2_output_0.5.csv`
+To run: `./all_comparisons ds1_output_0.5.csv ds2_output_0.5.csv`
