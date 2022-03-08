@@ -104,4 +104,9 @@ Below, we detail each file, what it denotes, and how you can run it:
 
 - `psi_all_comparisons.cpp`: A `full comparison` calculation between 2 datasets using the `VR` set intersection size operator (detailed in the paper as the fastest one for PALISADE). 
 
-To run: `./all_comparisons ds1_output_0.5.csv ds2_output_0.5.csv`
+To run: `./all-comparisons ds1_output_0.5.csv ds2_output_0.5.csv`
+
+- `bgv-sr.cpp`/`ckks-sr.cpp`: An implementation of private-set intersection size methods (e.g. `VR`, `VE`) in their respective cryptographic scheme (e.g.`BGV`, `CKKS`) in the sender-receiver (`SR`) mode. It randomly picks a record from each dataset and compares them with the chosen method input as a user parameter. 
+
+To run: `./bgv-sr ds1_output_0.5.csv ds2_output_0.5.csv vr` / `./ckks-sr ds1_output_0.5.csv ds2_output_0.5.csv ve`
+

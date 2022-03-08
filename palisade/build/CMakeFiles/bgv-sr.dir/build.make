@@ -69,28 +69,28 @@ include CMakeFiles/bgv-sr.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/bgv-sr.dir/flags.make
 
-CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o: CMakeFiles/bgv-sr.dir/flags.make
-CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o: ../psi_bgvrns_sr.cpp
-CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o: CMakeFiles/bgv-sr.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o -MF CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o.d -o CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o -c /Users/tanmay.ghai/amppere/palisade/psi_bgvrns_sr.cpp
+CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o: CMakeFiles/bgv-sr.dir/flags.make
+CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o: ../bgv_sr.cpp
+CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o: CMakeFiles/bgv-sr.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o -MF CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o.d -o CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o -c /Users/tanmay.ghai/amppere/palisade/bgv_sr.cpp
 
-CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tanmay.ghai/amppere/palisade/psi_bgvrns_sr.cpp > CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.i
+CMakeFiles/bgv-sr.dir/bgv_sr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bgv-sr.dir/bgv_sr.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tanmay.ghai/amppere/palisade/bgv_sr.cpp > CMakeFiles/bgv-sr.dir/bgv_sr.cpp.i
 
-CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tanmay.ghai/amppere/palisade/psi_bgvrns_sr.cpp -o CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.s
+CMakeFiles/bgv-sr.dir/bgv_sr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bgv-sr.dir/bgv_sr.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tanmay.ghai/amppere/palisade/bgv_sr.cpp -o CMakeFiles/bgv-sr.dir/bgv_sr.cpp.s
 
 # Object files for target bgv-sr
 bgv__sr_OBJECTS = \
-"CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o"
+"CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o"
 
 # External object files for target bgv-sr
 bgv__sr_EXTERNAL_OBJECTS =
 
-bgv-sr: CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o
+bgv-sr: CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o
 bgv-sr: CMakeFiles/bgv-sr.dir/build.make
 bgv-sr: /usr/local/lib/libPALISADEpke.1.11.3.dylib
 bgv-sr: /usr/local/lib/libPALISADEbinfhe.1.11.3.dylib

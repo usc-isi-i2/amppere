@@ -1,3 +1,5 @@
+/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles/ckks-sr.dir
 /Users/tanmay.ghai/amppere/palisade/build/CMakeFiles/rebuild_cache.dir
 /Users/tanmay.ghai/amppere/palisade/build/CMakeFiles/edit_cache.dir
+/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles/bgv-sr.dir
 /Users/tanmay.ghai/amppere/palisade/build/CMakeFiles/all-comparisons.dir

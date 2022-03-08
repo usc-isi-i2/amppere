@@ -69,28 +69,28 @@ include CMakeFiles/all-comparisons.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/all-comparisons.dir/flags.make
 
-CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o: CMakeFiles/all-comparisons.dir/flags.make
-CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o: ../psi_all_comparisons.cpp
-CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o: CMakeFiles/all-comparisons.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o -MF CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o.d -o CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o -c /Users/tanmay.ghai/amppere/palisade/psi_all_comparisons.cpp
+CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o: CMakeFiles/all-comparisons.dir/flags.make
+CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o: ../all_comparisons.cpp
+CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o: CMakeFiles/all-comparisons.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o -MF CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o.d -o CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o -c /Users/tanmay.ghai/amppere/palisade/all_comparisons.cpp
 
-CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tanmay.ghai/amppere/palisade/psi_all_comparisons.cpp > CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.i
+CMakeFiles/all-comparisons.dir/all_comparisons.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/all-comparisons.dir/all_comparisons.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tanmay.ghai/amppere/palisade/all_comparisons.cpp > CMakeFiles/all-comparisons.dir/all_comparisons.cpp.i
 
-CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tanmay.ghai/amppere/palisade/psi_all_comparisons.cpp -o CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.s
+CMakeFiles/all-comparisons.dir/all_comparisons.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/all-comparisons.dir/all_comparisons.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tanmay.ghai/amppere/palisade/all_comparisons.cpp -o CMakeFiles/all-comparisons.dir/all_comparisons.cpp.s
 
 # Object files for target all-comparisons
 all__comparisons_OBJECTS = \
-"CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o"
+"CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o"
 
 # External object files for target all-comparisons
 all__comparisons_EXTERNAL_OBJECTS =
 
-all-comparisons: CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o
+all-comparisons: CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o
 all-comparisons: CMakeFiles/all-comparisons.dir/build.make
 all-comparisons: /usr/local/lib/libPALISADEpke.1.11.3.dylib
 all-comparisons: /usr/local/lib/libPALISADEbinfhe.1.11.3.dylib

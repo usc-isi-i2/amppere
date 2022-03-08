@@ -69,28 +69,28 @@ include CMakeFiles/ckks-sr.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ckks-sr.dir/flags.make
 
-CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o: CMakeFiles/ckks-sr.dir/flags.make
-CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o: ../psi_ckks_sr.cpp
-CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o: CMakeFiles/ckks-sr.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o -MF CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o.d -o CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o -c /Users/tanmay.ghai/amppere/palisade/psi_ckks_sr.cpp
+CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o: CMakeFiles/ckks-sr.dir/flags.make
+CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o: ../ckks_sr.cpp
+CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o: CMakeFiles/ckks-sr.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o -MF CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o.d -o CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o -c /Users/tanmay.ghai/amppere/palisade/ckks_sr.cpp
 
-CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tanmay.ghai/amppere/palisade/psi_ckks_sr.cpp > CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.i
+CMakeFiles/ckks-sr.dir/ckks_sr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckks-sr.dir/ckks_sr.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tanmay.ghai/amppere/palisade/ckks_sr.cpp > CMakeFiles/ckks-sr.dir/ckks_sr.cpp.i
 
-CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tanmay.ghai/amppere/palisade/psi_ckks_sr.cpp -o CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.s
+CMakeFiles/ckks-sr.dir/ckks_sr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckks-sr.dir/ckks_sr.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tanmay.ghai/amppere/palisade/ckks_sr.cpp -o CMakeFiles/ckks-sr.dir/ckks_sr.cpp.s
 
 # Object files for target ckks-sr
 ckks__sr_OBJECTS = \
-"CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o"
+"CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o"
 
 # External object files for target ckks-sr
 ckks__sr_EXTERNAL_OBJECTS =
 
-ckks-sr: CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o
+ckks-sr: CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o
 ckks-sr: CMakeFiles/ckks-sr.dir/build.make
 ckks-sr: /usr/local/lib/libPALISADEpke.1.11.3.dylib
 ckks-sr: /usr/local/lib/libPALISADEbinfhe.1.11.3.dylib

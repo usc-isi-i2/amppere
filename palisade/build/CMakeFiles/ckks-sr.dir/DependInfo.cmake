@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/tanmay.ghai/amppere/palisade/psi_ckks_sr.cpp" "CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o" "gcc" "CMakeFiles/ckks-sr.dir/psi_ckks_sr.cpp.o.d"
+  "/Users/tanmay.ghai/amppere/palisade/ckks_sr.cpp" "CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o" "gcc" "CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o.d"
   )
 
 # Targets to which this target links.

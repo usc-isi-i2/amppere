@@ -63,6 +63,8 @@ CMAKE_BINARY_DIR = /Users/tanmay.ghai/amppere/palisade/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/ckks-sr.dir/all
+all: CMakeFiles/bgv-sr.dir/all
 all: CMakeFiles/all-comparisons.dir/all
 .PHONY : all
 
@@ -71,8 +73,62 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/ckks-sr.dir/clean
+clean: CMakeFiles/bgv-sr.dir/clean
 clean: CMakeFiles/all-comparisons.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ckks-sr.dir
+
+# All Build rule for target.
+CMakeFiles/ckks-sr.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-sr.dir/build.make CMakeFiles/ckks-sr.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-sr.dir/build.make CMakeFiles/ckks-sr.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=5,6 "Built target ckks-sr"
+.PHONY : CMakeFiles/ckks-sr.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ckks-sr.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tanmay.ghai/amppere/palisade/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ckks-sr.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tanmay.ghai/amppere/palisade/build/CMakeFiles 0
+.PHONY : CMakeFiles/ckks-sr.dir/rule
+
+# Convenience name for target.
+ckks-sr: CMakeFiles/ckks-sr.dir/rule
+.PHONY : ckks-sr
+
+# clean rule for target.
+CMakeFiles/ckks-sr.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-sr.dir/build.make CMakeFiles/ckks-sr.dir/clean
+.PHONY : CMakeFiles/ckks-sr.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/bgv-sr.dir
+
+# All Build rule for target.
+CMakeFiles/bgv-sr.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-sr.dir/build.make CMakeFiles/bgv-sr.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-sr.dir/build.make CMakeFiles/bgv-sr.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=3,4 "Built target bgv-sr"
+.PHONY : CMakeFiles/bgv-sr.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/bgv-sr.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tanmay.ghai/amppere/palisade/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bgv-sr.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tanmay.ghai/amppere/palisade/build/CMakeFiles 0
+.PHONY : CMakeFiles/bgv-sr.dir/rule
+
+# Convenience name for target.
+bgv-sr: CMakeFiles/bgv-sr.dir/rule
+.PHONY : bgv-sr
+
+# clean rule for target.
+CMakeFiles/bgv-sr.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-sr.dir/build.make CMakeFiles/bgv-sr.dir/clean
+.PHONY : CMakeFiles/bgv-sr.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/all-comparisons.dir

@@ -117,6 +117,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ckks-sr
+
+# Build rule for target.
+ckks-sr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ckks-sr
+.PHONY : ckks-sr
+
+# fast build rule for target.
+ckks-sr/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-sr.dir/build.make CMakeFiles/ckks-sr.dir/build
+.PHONY : ckks-sr/fast
+
+#=============================================================================
+# Target rules for targets named bgv-sr
+
+# Build rule for target.
+bgv-sr: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bgv-sr
+.PHONY : bgv-sr
+
+# fast build rule for target.
+bgv-sr/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-sr.dir/build.make CMakeFiles/bgv-sr.dir/build
+.PHONY : bgv-sr/fast
+
+#=============================================================================
 # Target rules for targets named all-comparisons
 
 # Build rule for target.
@@ -129,29 +155,77 @@ all-comparisons/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/all-comparisons.dir/build.make CMakeFiles/all-comparisons.dir/build
 .PHONY : all-comparisons/fast
 
-psi_all_comparisons.o: psi_all_comparisons.cpp.o
-.PHONY : psi_all_comparisons.o
+all_comparisons.o: all_comparisons.cpp.o
+.PHONY : all_comparisons.o
 
 # target to build an object file
-psi_all_comparisons.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/all-comparisons.dir/build.make CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o
-.PHONY : psi_all_comparisons.cpp.o
+all_comparisons.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all-comparisons.dir/build.make CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o
+.PHONY : all_comparisons.cpp.o
 
-psi_all_comparisons.i: psi_all_comparisons.cpp.i
-.PHONY : psi_all_comparisons.i
+all_comparisons.i: all_comparisons.cpp.i
+.PHONY : all_comparisons.i
 
 # target to preprocess a source file
-psi_all_comparisons.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/all-comparisons.dir/build.make CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.i
-.PHONY : psi_all_comparisons.cpp.i
+all_comparisons.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all-comparisons.dir/build.make CMakeFiles/all-comparisons.dir/all_comparisons.cpp.i
+.PHONY : all_comparisons.cpp.i
 
-psi_all_comparisons.s: psi_all_comparisons.cpp.s
-.PHONY : psi_all_comparisons.s
+all_comparisons.s: all_comparisons.cpp.s
+.PHONY : all_comparisons.s
 
 # target to generate assembly for a file
-psi_all_comparisons.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/all-comparisons.dir/build.make CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.s
-.PHONY : psi_all_comparisons.cpp.s
+all_comparisons.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all-comparisons.dir/build.make CMakeFiles/all-comparisons.dir/all_comparisons.cpp.s
+.PHONY : all_comparisons.cpp.s
+
+bgv_sr.o: bgv_sr.cpp.o
+.PHONY : bgv_sr.o
+
+# target to build an object file
+bgv_sr.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-sr.dir/build.make CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o
+.PHONY : bgv_sr.cpp.o
+
+bgv_sr.i: bgv_sr.cpp.i
+.PHONY : bgv_sr.i
+
+# target to preprocess a source file
+bgv_sr.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-sr.dir/build.make CMakeFiles/bgv-sr.dir/bgv_sr.cpp.i
+.PHONY : bgv_sr.cpp.i
+
+bgv_sr.s: bgv_sr.cpp.s
+.PHONY : bgv_sr.s
+
+# target to generate assembly for a file
+bgv_sr.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-sr.dir/build.make CMakeFiles/bgv-sr.dir/bgv_sr.cpp.s
+.PHONY : bgv_sr.cpp.s
+
+ckks_sr.o: ckks_sr.cpp.o
+.PHONY : ckks_sr.o
+
+# target to build an object file
+ckks_sr.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-sr.dir/build.make CMakeFiles/ckks-sr.dir/ckks_sr.cpp.o
+.PHONY : ckks_sr.cpp.o
+
+ckks_sr.i: ckks_sr.cpp.i
+.PHONY : ckks_sr.i
+
+# target to preprocess a source file
+ckks_sr.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-sr.dir/build.make CMakeFiles/ckks-sr.dir/ckks_sr.cpp.i
+.PHONY : ckks_sr.cpp.i
+
+ckks_sr.s: ckks_sr.cpp.s
+.PHONY : ckks_sr.s
+
+# target to generate assembly for a file
+ckks_sr.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-sr.dir/build.make CMakeFiles/ckks-sr.dir/ckks_sr.cpp.s
+.PHONY : ckks_sr.cpp.s
 
 # Help Target
 help:
@@ -162,9 +236,17 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... all-comparisons"
-	@echo "... psi_all_comparisons.o"
-	@echo "... psi_all_comparisons.i"
-	@echo "... psi_all_comparisons.s"
+	@echo "... bgv-sr"
+	@echo "... ckks-sr"
+	@echo "... all_comparisons.o"
+	@echo "... all_comparisons.i"
+	@echo "... all_comparisons.s"
+	@echo "... bgv_sr.o"
+	@echo "... bgv_sr.i"
+	@echo "... bgv_sr.s"
+	@echo "... ckks_sr.o"
+	@echo "... ckks_sr.i"
+	@echo "... ckks_sr.s"
 .PHONY : help
 
 

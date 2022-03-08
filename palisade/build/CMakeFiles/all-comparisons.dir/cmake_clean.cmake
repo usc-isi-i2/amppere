@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o"
-  "CMakeFiles/all-comparisons.dir/psi_all_comparisons.cpp.o.d"
+  "CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o"
+  "CMakeFiles/all-comparisons.dir/all_comparisons.cpp.o.d"
   "all-comparisons"
   "all-comparisons.pdb"
 )

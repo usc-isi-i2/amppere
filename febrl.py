@@ -5,7 +5,7 @@ import preprocessing as pp
 
 if __name__ == '__main__':
     '''
-    python3 febrl.py test_data/gen-1k_300-700-5-5-5-zipf-all_200.csv test_data/ds1_output.csv \
+    python preprocessing_febrl.py test_data/gen-1k_300-700-5-5-5-zipf-all_200.csv test_data/ds1_output.csv \
         --ngram=2 --blocking --num-perm=128 --threshold=0.5
     '''
 
@@ -19,14 +19,17 @@ if __name__ == '__main__':
     parser.add_argument('--threshold', dest='threshold', action='store', type=float)
     args = parser.parse_args()
 
-    fieldnames = ['rec_id', 'id', 'tokens']
+    fieldnames = ['id', 'original_id', 'tokens']
     fieldnames += ['blocking_keys'] if args.blocking else []
     
     csv_in = csv.DictReader(args.infile)
     csv_out = csv.DictWriter(args.outfile, fieldnames=fieldnames, lineterminator='\n')
     csv_out.writeheader()
     for idx, line in enumerate(csv_in):
-        value =  line['date_of_birth']\
+        value = line['culture']\
+            + ' ' + line['sex']\
+            + ' ' + line['age']\
+            + ' ' + line['date_of_birth']\
             + ' ' + line['title']\
             + ' ' + line['given_name']\
             + ' ' + line['surname']\
@@ -42,11 +45,10 @@ if __name__ == '__main__':
         value = set(pp.ngram(args.ngram, value))
         value = list(filter(lambda x: x != '', value))
 
-        tokens = ', '.join([str(int(hex(pp.encode_token(t)), 16)) for t in value])
         output = {
-            'rec_id': line['rec_id'],
             'id': str(idx),
-            'tokens': tokens
+            'original_id': line['rec_id'],
+            'tokens': ' '.join([hex(pp.encode_token(t)) for t in value])
         }
 
         if args.blocking:

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o"
-  "CMakeFiles/bgv-sr.dir/psi_bgvrns_sr.cpp.o.d"
+  "CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o"
+  "CMakeFiles/bgv-sr.dir/bgv_sr.cpp.o.d"
   "bgv-sr"
   "bgv-sr.pdb"
 )
