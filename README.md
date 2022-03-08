@@ -65,11 +65,11 @@ We utilize the [PALISADE](https://gitlab.com/palisade/palisade-release) lattice-
 
 | Parameter      | BGV | CKKS | 
 |------------------|:------:|:----:|
-| ring dim.        |  4,096  | 4096, 8,192(B) |
-| mult. depth      | 1       | 1, 2(B)        |
-| scale factor bits|  -      |  40            | 
-| plaintext mod.   |  65,537 |  -             |
-| batch size       |  -      |  16            | 
+| ring dim.        | 4,096   | 4096, 8,192(B) |
+| mult. depth      |   1     |  1, 2(B)       |
+| scale factor bits|   -     |  40            | 
+| plaintext mod.   | 65,537  |  -             |
+| batch size       |   -     |  16            | 
 | key switching    |   BV    |  BV            |
 | security level   | 128 bit |  128 bit       |  
 
