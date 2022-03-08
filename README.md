@@ -4,7 +4,7 @@ Code and datasets for the CIKM 2021 paper [A Universal Abstract Machine for Priv
 
 To cite our paper, please use the following:
 
-```ruby
+```python
 @inbook{10.1145/3459637.3482318,
 author = {Yao, Yixiang and Ghai, Tanmay and Ravi, Srivatsan and Szekely, Pedro},
 title = {AMPPERE: A Universal Abstract Machine for Privacy-Preserving Entity Resolution Evaluation},
@@ -17,5 +17,5 @@ booktitle = {Proceedings of the 30th ACM International Conference on Information
 pages = {2394–2403},
 numpages = {10}
 }
-```ruby
+```
 
