@@ -55,7 +55,7 @@ To understand our generated dataset and formulate a sense of ground truth, we ut
 ### Environment Settings
 
 Our experiments (for both Sharemind and PALISADE) are run on three virtual Ubuntu
-18.04.4 LTS servers each with 2 CPUs from Intel Xeon CPU E5-2690 v4 @ 2.60GHz and 4GB memory. All servers are in the same network and the average PING latency is around 0.12-0.23 ms. Additionally, to ensure a fair comparison between platforms we compile PALISADE with the following flag `-DWITH-NATIVEOPT = 1`, evaluate only single threaded runtimes (via `export OMP-NUM-THREADS = 1`), and turn CPU scaling off. Additionally, our toggle-able pipeline component of `obfuscation` is turned off.
+18.04.4 LTS servers each with 2 CPUs from Intel Xeon CPU E5-2690 v4 @ 2.60GHz and 4GB memory. All servers are in the same network and the average PING latency is around 0.12-0.23 ms. Additionally, to ensure a fair comparison between platforms we compile PALISADE with the following flag `-DWITH-NATIVEOPT = 1`, evaluate only single threaded runtimes (`export OMP-NUM-THREADS = 1`), and turn CPU scaling off. Additionally, our toggle-able pipeline component of `obfuscation` is turned off.
 
 ## Sharemind MPC
 
