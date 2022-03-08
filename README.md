@@ -45,7 +45,7 @@ Relative importance of false positives: 0.5
 
 ### Expected performance
 
-To understand our generated dataset and formulate a sense of ground truth, we utilize aanother [python script](https://github.com/usc-isi-i2/amppere) to apply blocking and non privacy-preserving entity resolution, computing three metrics: `Pairs Completeness (PC)`, `Reduction Ratio (RR)`, `F-score`. 
+To understand our generated dataset and formulate a sense of ground truth, we utilize another [python script](https://github.com/usc-isi-i2/amppere) to apply blocking and non privacy-preserving entity resolution, computing three metrics: `Pairs Completeness (PC)`, `Reduction Ratio (RR)`, `F-score`. 
 
 ## Sharemind MPC
 
