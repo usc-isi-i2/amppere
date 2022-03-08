@@ -61,7 +61,7 @@ Our experiments (for both Sharemind and PALISADE) are run on three virtual `Ubun
 
 ## PALISADE
 
-We utilize the [PALISADE](https://gitlab.com/palisade/palisade-release) lattice-based homomorphic encryption library (v. 1.11.3) as our HE tool. Working with the Brakersi-Gentry-Vaikuntanathan [BGV](https://eprint.iacr.org/2011/277.pdf) and Cheon-Kim-Kim-Song [CKKS](https://eprint.iacr.org/2016/421.pdf) schemes, we configure them with the following parameters: 
+We utilize the [PALISADE](https://gitlab.com/palisade/palisade-release) lattice-based homomorphic encryption library (v. 1.11.3) as our HE tool. Working with the Brakersi-Gentry-Vaikuntanathan [BGV](https://eprint.iacr.org/2011/277.pdf) and Cheon-Kim-Kim-Song [CKKS](https://eprint.iacr.org/2016/421.pdf) schemes, we configure them with the following parameters (`B` denotes blocking): 
 
 | Parameter      | BGV | CKKS | 
 |------------------|:------:|:----:|
