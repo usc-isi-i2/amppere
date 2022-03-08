@@ -22,7 +22,7 @@ numpages = {10}
 Entity resolution is the task of identifying records in different datasets that refer to the same entity in the real world. In sensitive domains (e.g. financial accounts, hospital health records), entity resolution must meet privacy requirements to avoid revealing sensitive information such as personal identifiable information to untrusted parties. Existing solutions are either too algorithmically-specific or come with an implicit trade-off between accuracy of the computation, privacy, and run-time efficiency. We propose AMMPERE, an abstract computation model for performing universal privacy-preserving entity resolution. AMMPERE offers abstractions that encapsulate multiple algorithmic and platform-agnostic approaches using variants of Jaccard similarity to perform private data matching and entity resolution. Specifically, we show that two parties can perform entity resolution over their data, without leaking sensitive information. We rigorously compare and analyze the feasibility, performance overhead and privacy-preserving properties of these approaches on the Sharemind multi-party computation (MPC) platform as well as on PALISADE, a lattice-based homomorphic encryption library. The AMMPERE system demonstrates the efficacy of privacy-preserving entity resolution for real-world data while providing a precise characterization of the induced cost of preventing information leakage.
 
 
-## Dataset, Parameters & Settings
+## Datasets & Settings
 
 ### Febrl
 
@@ -52,6 +52,10 @@ To understand our generated dataset and formulate a sense of ground truth, we ut
 
 `Fig.3` displays the expected non privacy-preserving ER and blocking results, whereas `fig.4` details the optimal MinHashLSH blocking key size. In our findings, we note that the blocking key size is directly correlated with `b`, or the blocking threshold. 
 
+### Environment Settings
+
+Our experiments (for both Sharemind and PALISADE) are run on three virtual Ubuntu
+18.04.4 LTS servers each with 2 CPUs from Intel Xeon CPU E5-2690 v4 @ 2.60GHz and 4GB memory. All servers are in the same network and the average PING latency is around 0.12-0.23 ms. Additionally, to ensure a fair comparison between platforms we compile PALISADE with the following flag `-DWITH-NATIVEOPT = 1`, evaluate only single threaded runtimes (via `export OMP-NUM-THREADS = 1`), and turn CPU scaling off. Additionally, our toggle-able pipeline component of `obfuscation` is turned off.
 
 ## Sharemind MPC
 
