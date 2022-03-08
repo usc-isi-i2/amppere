@@ -24,7 +24,19 @@ Entity resolution is the task of identifying records in different datasets that 
 
 ## Dataset, Parameters & Settings
 
-## Sharemind 
+### Febrl
+
+We utilize Febrl, a synthetic entity resolution dataset generated using [dsgen](https://github.com/J535D165/FEBRL-fork-v0.4.2/tree/master/dsgen). Our experiments work over a generated set of 100 records, split into 20% for D<sub>1</sub> and 80% for D<sub>2</sub> generated with the following settings: 
+
+```
+Maximal number of duplicates for one original record: 5,
+Maximum number of modifications per field: 5,
+Maximum number of modifications per record: 5, 
+Probability distribution for duplicates: zipf,
+Type of modification: typo, ocr, phonetic
+```
+
+## Sharemind MPC
 
 ## PALISADE
 
