@@ -26,7 +26,7 @@ Entity resolution is the task of identifying records in different datasets that 
 
 ### Febrl
 
-We utilize Febrl, a synthetic entity resolution dataset generated using [dsgen](https://github.com/J535D165/FEBRL-fork-v0.4.2/tree/master/dsgen). Our experiments work over a generated set of 100 records, split into 20% for D<sub>1</sub> and 80% for D<sub>2</sub> generated with the following settings: 
+We utilize [Febrl](https://recordlinkage.readthedocs.io/en/latest/ref-datasets.html), a synthetic entity resolution dataset generated using [dsgen](https://github.com/J535D165/FEBRL-fork-v0.4.2/tree/master/dsgen). Our experiments work over a generated set of 100 records, split into 20% for D<sub>1</sub> and 80% for D<sub>2</sub> generated with the following settings: 
 
 ```
 Maximal number of duplicates for one original record: 5
