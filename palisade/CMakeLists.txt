@@ -49,10 +49,8 @@ endif()
 add_executable ( all-comparisons ../all_comparisons.cpp )
 add_executable( bgv-sr ../bgv_sr.cpp )
 add_executable( ckks-sr ../ckks_sr.cpp )
+add_executable( bgv-3pc ../bgvrns_3pc.cpp )
+add_executable( ckks-3pc ../ckks_3pc.cpp )
 
-
-### add_executable( bgv-3pc ../psi_bgvrns_3pc.cpp )
-
-### add_executable( ckks-3pc ../psi_ckks_3pc.cpp )
 ### add_executable( blocking-sr ../psi_blocking_ckks_sr.cpp )
 ### add_executable( blocking-3pc ../psi_blocking_ckks_3pc.cpp )

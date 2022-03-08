@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o"
-  "CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o.d"
+  "CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o"
+  "CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o.d"
   "ckks-3pc"
   "ckks-3pc.pdb"
 )

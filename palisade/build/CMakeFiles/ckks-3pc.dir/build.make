@@ -69,28 +69,28 @@ include CMakeFiles/ckks-3pc.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ckks-3pc.dir/flags.make
 
-CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o: CMakeFiles/ckks-3pc.dir/flags.make
-CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o: ../psi_ckks_3pc.cpp
-CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o: CMakeFiles/ckks-3pc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o -MF CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o.d -o CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o -c /Users/tanmay.ghai/amppere/palisade/psi_ckks_3pc.cpp
+CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o: CMakeFiles/ckks-3pc.dir/flags.make
+CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o: ../ckks_3pc.cpp
+CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o: CMakeFiles/ckks-3pc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o -MF CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o.d -o CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o -c /Users/tanmay.ghai/amppere/palisade/ckks_3pc.cpp
 
-CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tanmay.ghai/amppere/palisade/psi_ckks_3pc.cpp > CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.i
+CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tanmay.ghai/amppere/palisade/ckks_3pc.cpp > CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.i
 
-CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tanmay.ghai/amppere/palisade/psi_ckks_3pc.cpp -o CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.s
+CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tanmay.ghai/amppere/palisade/ckks_3pc.cpp -o CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.s
 
 # Object files for target ckks-3pc
 ckks__3pc_OBJECTS = \
-"CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o"
+"CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o"
 
 # External object files for target ckks-3pc
 ckks__3pc_EXTERNAL_OBJECTS =
 
-ckks-3pc: CMakeFiles/ckks-3pc.dir/psi_ckks_3pc.cpp.o
+ckks-3pc: CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o
 ckks-3pc: CMakeFiles/ckks-3pc.dir/build.make
 ckks-3pc: /usr/local/lib/libPALISADEpke.1.11.3.dylib
 ckks-3pc: /usr/local/lib/libPALISADEbinfhe.1.11.3.dylib

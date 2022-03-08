@@ -46,7 +46,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/ckks-sr.dir/DependInfo.cmake"
-  "CMakeFiles/bgv-sr.dir/DependInfo.cmake"
   "CMakeFiles/all-comparisons.dir/DependInfo.cmake"
+  "CMakeFiles/ckks-sr.dir/DependInfo.cmake"
+  "CMakeFiles/ckks-3pc.dir/DependInfo.cmake"
+  "CMakeFiles/bgv-sr.dir/DependInfo.cmake"
+  "CMakeFiles/bgv-3pc.dir/DependInfo.cmake"
   )

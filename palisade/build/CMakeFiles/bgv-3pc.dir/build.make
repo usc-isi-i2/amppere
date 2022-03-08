@@ -69,28 +69,28 @@ include CMakeFiles/bgv-3pc.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/bgv-3pc.dir/flags.make
 
-CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o: CMakeFiles/bgv-3pc.dir/flags.make
-CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o: ../psi_bgvrns_3pc.cpp
-CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o: CMakeFiles/bgv-3pc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o -MF CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o.d -o CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o -c /Users/tanmay.ghai/amppere/palisade/psi_bgvrns_3pc.cpp
+CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o: CMakeFiles/bgv-3pc.dir/flags.make
+CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o: ../bgvrns_3pc.cpp
+CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o: CMakeFiles/bgv-3pc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/tanmay.ghai/amppere/palisade/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o -MF CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o.d -o CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o -c /Users/tanmay.ghai/amppere/palisade/bgvrns_3pc.cpp
 
-CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tanmay.ghai/amppere/palisade/psi_bgvrns_3pc.cpp > CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.i
+CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/tanmay.ghai/amppere/palisade/bgvrns_3pc.cpp > CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.i
 
-CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tanmay.ghai/amppere/palisade/psi_bgvrns_3pc.cpp -o CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.s
+CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/tanmay.ghai/amppere/palisade/bgvrns_3pc.cpp -o CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.s
 
 # Object files for target bgv-3pc
 bgv__3pc_OBJECTS = \
-"CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o"
+"CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o"
 
 # External object files for target bgv-3pc
 bgv__3pc_EXTERNAL_OBJECTS =
 
-bgv-3pc: CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o
+bgv-3pc: CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o
 bgv-3pc: CMakeFiles/bgv-3pc.dir/build.make
 bgv-3pc: /usr/local/lib/libPALISADEpke.1.11.3.dylib
 bgv-3pc: /usr/local/lib/libPALISADEbinfhe.1.11.3.dylib

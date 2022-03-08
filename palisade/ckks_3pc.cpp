@@ -48,36 +48,32 @@ int main(int argc, char** argv) {
   string ds2 = argv[2];
   string mode = argv[3];
 
-  int plaintextModulus = 65537;
-  double sigma = 3.2;
-  SecurityLevel securityLevel = HEStd_128_classic;
-  uint32_t depth = 1;
+  // Instantiate the CKKS crypto context
+  usint init_size = 1;
+  usint dcrtBits = 40;
+  usint batchSize = 16;
 
-  // Instantiate the BGVrns crypto context
   CryptoContext<DCRTPoly> cc =
-      CryptoContextFactory<DCRTPoly>::genCryptoContextBGVrns(
-          depth, plaintextModulus, securityLevel, sigma, depth, OPTIMIZED, BV);
+      CryptoContextFactory<DCRTPoly>::genCryptoContextCKKS(
+          init_size - 1, dcrtBits, batchSize, HEStd_128_classic,
+          0,                    /*ringDimension*/
+          APPROXRESCALE, BV, 1, /*numLargeDigits*/
+          1,                    /*maxDepth*/
+          60,                   /*firstMod*/
+          5, OPTIMIZED);
 
-  //  cout << *cc->GetElementParams() << endl;
-
-  // Enable features that to use
   cc->Enable(ENCRYPTION);
   cc->Enable(SHE);
   cc->Enable(MULTIPARTY);
-  // Initialize Public Key Containers
   LPKeyPair<DCRTPoly> keyPair;
   LPKeyPair<DCRTPoly> keyPair2;
-
   LPKeyPair<DCRTPoly> kpMultiparty;
-
-  // Generate a public/private key pair
-
   keyPair = cc->KeyGen();
 
   map<int, vector<int64_t>> setA =
-      readFromCSVFile(path + "/../test_data/" + ds1);
+      readFromCSVFile(path + "/../../test_data/" + ds1);
   map<int, vector<int64_t>> setB =
-      readFromCSVFile(path + "/../test_data/" + ds2);
+      readFromCSVFile(path + "/../../test_data/" + ds2);
 
   int psi = 0;
   float threshold = 0.5;
@@ -87,8 +83,12 @@ int main(int argc, char** argv) {
   int a_idx = rand() % setA.size();
   int b_idx = rand() % setB.size();
 
-  vector<int64_t> rec_a_tokens = setA[a_idx];
-  vector<int64_t> rec_b_tokens = setB[b_idx];
+  vector<int64_t> rec_a_tokens_int = setA[a_idx];
+  vector<complex<double>> rec_a_tokens(rec_a_tokens_int.begin(),
+                                       rec_a_tokens_int.end());
+  vector<int64_t> rec_b_tokens_int = setB[b_idx];
+  vector<complex<double>> rec_b_tokens(rec_b_tokens_int.begin(),
+                                       rec_b_tokens_int.end());
 
   std::vector<int> rotationIndices(rec_a_tokens.size() * 2);
   std::iota(std::begin(rotationIndices), std::end(rotationIndices),
@@ -122,8 +122,11 @@ int main(int argc, char** argv) {
   cc->InsertEvalSumKey(evalSumKeysJoin);
 
   cc->InsertEvalAutomorphismKey(evalAtIndexKeysJoin);
+  ;
 
-   cout << "Comparing record " << a_idx << " from set A, and record " << b_idx<< " from set B" << endl;
+  //  cout << "Comparing record " << a_idx << " from set A, and record " <<
+  //  b_idx
+  //       << " from set B" << endl;
 
   if (mode == "vr" or mode == "ve2") {
     Plaintext plaintextA;
@@ -132,8 +135,8 @@ int main(int argc, char** argv) {
     Ciphertext<DCRTPoly> ciphertextA;
     Ciphertext<DCRTPoly> ciphertextB;
 
-    plaintextA = cc->MakePackedPlaintext(rec_a_tokens);
-    plaintextB = cc->MakePackedPlaintext(rec_b_tokens);
+    plaintextA = cc->MakeCKKSPackedPlaintext(rec_a_tokens);
+    plaintextB = cc->MakeCKKSPackedPlaintext(rec_b_tokens);
 
     ciphertextA = cc->Encrypt(keyPair2.publicKey, plaintextA);
     ciphertextB = cc->Encrypt(keyPair2.publicKey, plaintextB);
@@ -148,7 +151,7 @@ int main(int argc, char** argv) {
 
       for (unsigned int i = 0; i < rec_b_tokens.size(); i++) {
         ciphertextB_ext.push_back(cc->Encrypt(
-            keyPair2.publicKey, cc->MakePackedPlaintext({rec_b_tokens[i]})));
+            keyPair2.publicKey, cc->MakeCKKSPackedPlaintext({rec_b_tokens[i]})));
       }
       er = isMatchViaExtension2(cc, keyPair, keyPair2, ciphertextA,
                                 ciphertextB_ext, threshold,
@@ -171,14 +174,14 @@ int main(int argc, char** argv) {
 
     for (unsigned int i = 0; i < rec_a_tokens.size(); i++) {
       Plaintext a;
-      a = cc->MakePackedPlaintext({rec_a_tokens[i]});
+      a = cc->MakeCKKSPackedPlaintext({rec_a_tokens[i]});
       plaintextA.push_back(a);
       ciphertextA.push_back(cc->Encrypt(keyPair2.publicKey, a));
     }
 
     for (unsigned int i = 0; i < rec_b_tokens.size(); i++) {
       Plaintext b;
-      b = cc->MakePackedPlaintext({rec_b_tokens[i]});
+      b = cc->MakeCKKSPackedPlaintext({rec_b_tokens[i]});
       plaintextB.push_back(b);
       ciphertextB.push_back(cc->Encrypt(keyPair2.publicKey, b));
     }
@@ -239,7 +242,8 @@ bool isMatchViaNaive(CryptoContext<DCRTPoly> cc, LPKeyPair<DCRTPoly> keyPair,
       cc->MultipartyDecryptFusion(partialCiphertextVec,
                                   &plaintextMultipartyNew);
 
-      if (plaintextMultipartyNew->GetPackedValue()[0] == 0) {
+      if (plaintextMultipartyNew->GetCKKSPackedValue()[0].real() <= 0.0005 &&
+          plaintextMultipartyNew->GetCKKSPackedValue()[0].real() >= -0.0005) {
         match_counter++;
       }
     }
@@ -291,8 +295,12 @@ bool isMatchViaOverlap(CryptoContext<DCRTPoly> cc, LPKeyPair<DCRTPoly> keyPair,
   cc->MultipartyDecryptFusion(partialCiphertextVec, &plaintextMultipartyNew);
   plaintextMultipartyNew->SetLength(a_size);
 
-  overlap += count(plaintextMultipartyNew->GetPackedValue().begin(),
-                   plaintextMultipartyNew->GetPackedValue().end(), 0);
+  vector<complex<double>> v = plaintextMultipartyNew->GetCKKSPackedValue();
+  for (int i = 0; i < v.size(); i++) {
+    if (v[i].real() <= 0.0005 && v[i].real() >= -0.0005) {
+      overlap++;
+    }
+  }
 
   unsigned int idx = 1;
   while (idx < a_size) {
@@ -331,8 +339,12 @@ bool isMatchViaOverlap(CryptoContext<DCRTPoly> cc, LPKeyPair<DCRTPoly> keyPair,
     cc->MultipartyDecryptFusion(partialCiphertextVec, &plaintextMultipartyNew);
     plaintextMultipartyNew->SetLength(a_size);
 
-    overlap += count(plaintextMultipartyNew->GetPackedValue().begin(),
-                     plaintextMultipartyNew->GetPackedValue().end(), 0);
+    vector<complex<double>> v = plaintextMultipartyNew->GetCKKSPackedValue();
+    for (int i = 0; i < v.size(); i++) {
+      if (v[i].real() <= 0.0005 && v[i].real() >= -0.0005) {
+        overlap++;
+      }
+    }
 
     idx++;
   }
@@ -407,8 +419,9 @@ bool isMatchViaExtension(CryptoContext<DCRTPoly> cc,
                                   &plaintextMultipartyNew);
       plaintextMultipartyNew->SetLength(1);
 
-      if (plaintextMultipartyNew->GetPackedValue()[0] == 0) {
-        match_counter += 1;
+      if (plaintextMultipartyNew->GetCKKSPackedValue()[0].real() <= 0.0005 &&
+          plaintextMultipartyNew->GetCKKSPackedValue()[0].real() >= -0.0005) {
+        match_counter++;
       }
     }
   }
@@ -466,8 +479,12 @@ bool isMatchViaExtension2(CryptoContext<DCRTPoly> cc,
     cc->MultipartyDecryptFusion(partialCiphertextVec, &plaintextMultipartyNew);
     plaintextMultipartyNew->SetLength(a_size);
 
-    match_counter += count(plaintextMultipartyNew->GetPackedValue().begin(),
-                     plaintextMultipartyNew->GetPackedValue().end(), 0);
+    vector<complex<double>> v = plaintextMultipartyNew->GetCKKSPackedValue();
+    for (int i = 0; i < v.size(); i++) {
+      if (v[i].real() <= 0.0005 && v[i].real() >= -0.0005) {
+        match_counter++;
+      }
+    }
   }
 
   bool er = jaccard(match_counter, a_size, b_size, threshold);

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/tanmay.ghai/amppere/palisade/psi_bgvrns_3pc.cpp" "CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o" "gcc" "CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o.d"
+  "/Users/tanmay.ghai/amppere/palisade/bgvrns_3pc.cpp" "CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o" "gcc" "CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o.d"
   )
 
 # Targets to which this target links.

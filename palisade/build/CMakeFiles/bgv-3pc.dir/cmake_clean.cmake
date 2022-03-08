@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o"
-  "CMakeFiles/bgv-3pc.dir/psi_bgvrns_3pc.cpp.o.d"
+  "CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o"
+  "CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o.d"
   "bgv-3pc"
   "bgv-3pc.pdb"
 )

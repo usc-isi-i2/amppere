@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named all-comparisons
+
+# Build rule for target.
+all-comparisons: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all-comparisons
+.PHONY : all-comparisons
+
+# fast build rule for target.
+all-comparisons/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/all-comparisons.dir/build.make CMakeFiles/all-comparisons.dir/build
+.PHONY : all-comparisons/fast
+
+#=============================================================================
 # Target rules for targets named ckks-sr
 
 # Build rule for target.
@@ -128,6 +141,19 @@ ckks-sr: cmake_check_build_system
 ckks-sr/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-sr.dir/build.make CMakeFiles/ckks-sr.dir/build
 .PHONY : ckks-sr/fast
+
+#=============================================================================
+# Target rules for targets named ckks-3pc
+
+# Build rule for target.
+ckks-3pc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ckks-3pc
+.PHONY : ckks-3pc
+
+# fast build rule for target.
+ckks-3pc/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-3pc.dir/build.make CMakeFiles/ckks-3pc.dir/build
+.PHONY : ckks-3pc/fast
 
 #=============================================================================
 # Target rules for targets named bgv-sr
@@ -143,17 +169,17 @@ bgv-sr/fast:
 .PHONY : bgv-sr/fast
 
 #=============================================================================
-# Target rules for targets named all-comparisons
+# Target rules for targets named bgv-3pc
 
 # Build rule for target.
-all-comparisons: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all-comparisons
-.PHONY : all-comparisons
+bgv-3pc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bgv-3pc
+.PHONY : bgv-3pc
 
 # fast build rule for target.
-all-comparisons/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/all-comparisons.dir/build.make CMakeFiles/all-comparisons.dir/build
-.PHONY : all-comparisons/fast
+bgv-3pc/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-3pc.dir/build.make CMakeFiles/bgv-3pc.dir/build
+.PHONY : bgv-3pc/fast
 
 all_comparisons.o: all_comparisons.cpp.o
 .PHONY : all_comparisons.o
@@ -203,6 +229,54 @@ bgv_sr.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-sr.dir/build.make CMakeFiles/bgv-sr.dir/bgv_sr.cpp.s
 .PHONY : bgv_sr.cpp.s
 
+bgvrns_3pc.o: bgvrns_3pc.cpp.o
+.PHONY : bgvrns_3pc.o
+
+# target to build an object file
+bgvrns_3pc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-3pc.dir/build.make CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.o
+.PHONY : bgvrns_3pc.cpp.o
+
+bgvrns_3pc.i: bgvrns_3pc.cpp.i
+.PHONY : bgvrns_3pc.i
+
+# target to preprocess a source file
+bgvrns_3pc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-3pc.dir/build.make CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.i
+.PHONY : bgvrns_3pc.cpp.i
+
+bgvrns_3pc.s: bgvrns_3pc.cpp.s
+.PHONY : bgvrns_3pc.s
+
+# target to generate assembly for a file
+bgvrns_3pc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bgv-3pc.dir/build.make CMakeFiles/bgv-3pc.dir/bgvrns_3pc.cpp.s
+.PHONY : bgvrns_3pc.cpp.s
+
+ckks_3pc.o: ckks_3pc.cpp.o
+.PHONY : ckks_3pc.o
+
+# target to build an object file
+ckks_3pc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-3pc.dir/build.make CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.o
+.PHONY : ckks_3pc.cpp.o
+
+ckks_3pc.i: ckks_3pc.cpp.i
+.PHONY : ckks_3pc.i
+
+# target to preprocess a source file
+ckks_3pc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-3pc.dir/build.make CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.i
+.PHONY : ckks_3pc.cpp.i
+
+ckks_3pc.s: ckks_3pc.cpp.s
+.PHONY : ckks_3pc.s
+
+# target to generate assembly for a file
+ckks_3pc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ckks-3pc.dir/build.make CMakeFiles/ckks-3pc.dir/ckks_3pc.cpp.s
+.PHONY : ckks_3pc.cpp.s
+
 ckks_sr.o: ckks_sr.cpp.o
 .PHONY : ckks_sr.o
 
@@ -236,7 +310,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... all-comparisons"
+	@echo "... bgv-3pc"
 	@echo "... bgv-sr"
+	@echo "... ckks-3pc"
 	@echo "... ckks-sr"
 	@echo "... all_comparisons.o"
 	@echo "... all_comparisons.i"
@@ -244,6 +320,12 @@ help:
 	@echo "... bgv_sr.o"
 	@echo "... bgv_sr.i"
 	@echo "... bgv_sr.s"
+	@echo "... bgvrns_3pc.o"
+	@echo "... bgvrns_3pc.i"
+	@echo "... bgvrns_3pc.s"
+	@echo "... ckks_3pc.o"
+	@echo "... ckks_3pc.i"
+	@echo "... ckks_3pc.s"
 	@echo "... ckks_sr.o"
 	@echo "... ckks_sr.i"
 	@echo "... ckks_sr.s"

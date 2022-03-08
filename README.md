@@ -110,3 +110,7 @@ To run: `./all-comparisons ds1_output_0.5.csv ds2_output_0.5.csv`
 
 To run: `./bgv-sr ds1_output_0.5.csv ds2_output_0.5.csv vr` / `./ckks-sr ds1_output_0.5.csv ds2_output_0.5.csv ve`
 
+- `bgv-3pc.cpp`/`ckks-3pc.cpp`: An implementation of private-set intersection size methods (e.g. `VR`, `VE`) in their respective cryptographic scheme (e.g.`BGV`, `CKKS`) in the three party (`3PC`) mode. It randomly picks a record from each dataset and compares them with the chosen method input as a user parameter. 
+
+To run: `./bgv-3pc ds1_output_0.5.csv ds2_output_0.5.csv ve` / `./ckks-3pc ds1_output_0.5.csv ds2_output_0.5.csv vr`
+
