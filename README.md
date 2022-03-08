@@ -54,7 +54,7 @@ Number of permutations: 128
 Relative importance of false positives: 0.5
 ```
 
-To understand our generated dataset and formulate a sense of ground truth, we utilize another [python script (`eval.py`) to apply blocking and non privacy-preserving entity resolution, computing three metrics: `Pairs Completeness (PC)`, `Reduction Ratio (RR)`, `F-score`. 
+To understand our generated dataset and formulate a sense of ground truth, we utilize another python script (`eval.py`) to apply blocking and non privacy-preserving entity resolution, computing three metrics: `Pairs Completeness (PC)`, `Reduction Ratio (RR)`, `F-score`. 
 
 To run `eval.py` for a variety of statistics/metrics, one can run the following commands:
 
@@ -73,6 +73,7 @@ To run `eval.py` for a variety of statistics/metrics, one can run the following 
     '''
 ```
 
+Note: `eval.py` can only be run, after a sample dataset (e.g. `ds2_output_0.8.csv`) has been created via a run of `febrl.py`. 
 
 `Fig.3` displays the expected non privacy-preserving ER and blocking results, whereas `fig.4` details the optimal MinHashLSH blocking key size. In our findings, we note that the blocking key size is directly correlated with `b`, or the blocking threshold. 
 
@@ -97,4 +98,10 @@ We utilize the [PALISADE](https://gitlab.com/palisade/palisade-release) lattice-
 | key switching    |   BV    |  BV            |
 | security level   | 128 bit |  128 bit       |  
 
+Our various implementations are located under the `/palisade` directory, which contains a cmake user project that can easily be compiled via `cmake ..` and then `make` from the `/build` sub-directory. 
 
+Below, we detail each file, what it denotes, and how you can run it:
+
+- `psi_all_comparisons.cpp`: A `full comparison` calculation between 2 datasets using the `VR` set intersection size operator (detailed in the paper as the fastest one for PALISADE). 
+
+To run: `./all_comp ds1_output_0.5.csv ds2_output_0.5.csv`
