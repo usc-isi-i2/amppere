@@ -1,0 +1,21 @@
+rec_id,culture,sex,age,date_of_birth,title,given_name,surname,state,suburb,postcode,street_number,address_1,address_2,phone_number,soc_sec_id,blocking_number,family_role,_gt_id
+rec-2-org,eng,f,30,19910514,ms,daniel,meyrick,nsw,,4285,74,hedger street,,612 88729716,2598859,4,NoRole,rec-2
+rec-9-org,eng,f,,,,tiana,timberlake,,ballarat north,2066,31,miller street,rocklands,03 87920883,7830938,1,NoRole,rec-9
+rec-7-org,unk,,33,19880731,,amber,aballon,vic,newlands arm,4054,13,solly place,rosetta village,618 92927134,9186694,3,NoRole,rec-7
+rec-11-dup-2,usa,f,37,,dr,braiden,salinas,vic,brunswick west,3624,24,barada mrescent,blackwattle farm,618 13012876,3863183,1,NoRole,rec-11
+rec-8-dup-1,chi,f,30,19910521,mr,aleecj,luan,njw,eaztt seaham,2620,22,,,612 09738487,1254615,4,NoRole,rec-8
+rec-18-dup-0,ind,m,,19010813,,kelsea,mir p ri,qld,coonamble,Z287,5,kingsfordsmith drive,,08 72888243,2182015,2,NoRole,rec-18
+rec-2-dup-0,eng,f,30,19910514,ms,daniel,meyrick,nsw,,4285,942,hedger street,,612 88729716,2598859,4,NoRole,rec-2
+rec-28-dup-0,iri,f,29,19920317,ms,jasmlyn,mccarrick,,macquarie fields,4805,129,domain street,silver shores vlge,08 25265246,9241410,2,NoRole,rec-28
+rec-10-dup-2,eng,f,38,19831221,,benzamin,turnbull,,indella,3107,6,buntine crescent,sdate bank arkade,02 40207790,3777972,1,NoRole,rec-10
+rec-26-dup-3,unk,,29,19920430,,eboni,abbon andola,t a,sassafras,3660,36,jackie howe crescent,,07 756  549,8737941,2,NoRole,rec-26
+rec-23-org,usa,f,20,20010222,,kaitlin,farmer,vic,smythesdale,7021,15,lidgett place,belvedere,618 17879950,5288728,3,NoRole,rec-23
+rec-26-dup-1,unk,,29,199204 0,,eboni,abbondandola,ta,5assafras,3660,36,jackie howe c escent,,07 7567 4549,8737941,2,NoRole,rec-26
+rec-13-org,chi,f,11,20100924,,isaiah,tseng,nsw,yattalunga,2066,52,strickland crescent,,2 87025492,4999947,9,NoRole,rec-13
+rec-22-dup-0,chi,f,35,19796417,pfc,jake,wai,nsw,glebe,7330,60,national circuit,nioka,2 84374228,1232626,0,NoRole,rec-22
+rec-6-dup-0,ger,f,34,19870919,,harry,sepp elt,vi c,ner ena,3134,6,,bradshaw crt ki kbrae village,8 70712782,4498 28,9,NoRole,rec-6
+rec-27-org,swe,,32,19891031,pfc,charlie,creutz,vic,albion,5097,60,irvine street,avenel,618 08629660,4063737,6,NoRole,rec-27
+rec-25-org,fin,f,,19910330,ms,grace,kangas,vic,pirron yallock,4610,13,blamey crescent,leebold hill farm,618 85804860,9604566,1,NoRole,rec-25
+rec-8-dup-0,chi,f,30,19910521,mr,al,luan,nsw,eajt seaham,2620,22,,,612 09738487,1254615,4,NoRole,rec-8
+rec-0-org,ser,f,,19971105,ms,lilly,bodaroga,sa,hillcrest,5108,17,,,07 61286331,6616216,4,NoRole,rec-0
+rec-15-dup-1,ser,,28,19931120,sgt,ckira,rupan,,north narrabeen,5341,17,pickworth street,okre,08 64835927,5727657,2,NoRole,rec-15

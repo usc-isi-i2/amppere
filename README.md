@@ -36,8 +36,14 @@ Probability distribution for duplicates: zipf
 Type of modification: typo, ocr, phonetic
 ```
 
-We further perform pre-processing and bi-gram, integer tokenization for each record using a [python script](https://github.com/usc-isi-i2/amppere). 
+The generated datasets are stored under the `/test_data` directory as follows: 
+`gen-100_30-70-5-5-5-zipf-all_20.csv` and `gen-100_30-70-5-5-5-zipf-all_80.csv`. We further perform pre-processing and bi-gram, integer tokenization for each record using the script `febrl.py`. Internally, `febrl.py` utilizes `preprocessing.py` for utility methods and functionality. To run pre-processing over a dataset, one can run the following command:
 
+```
+python3 febrl.py test_data/gen-100_30-70-5-5-5-zipf-all_20.csv test_data/ds1_output.csv  --ngram=2 --blocking --num-perm=128 --threshold=0.5
+```
+
+with the following flags `--blocking` to ensure generation of blocking keys, `--ngram` to denote the size of n (e.g. 2 for bi-gram), `--num-perm` for number of permutations, and `--threshold` for the jaccard similarity threshold value (we choose 0.2, 0.5, and 0.8). 
 
 ### MinHashLSH and Blocking
 
@@ -48,7 +54,25 @@ Number of permutations: 128
 Relative importance of false positives: 0.5
 ```
 
-To understand our generated dataset and formulate a sense of ground truth, we utilize another [python script](https://github.com/usc-isi-i2/amppere) to apply blocking and non privacy-preserving entity resolution, computing three metrics: `Pairs Completeness (PC)`, `Reduction Ratio (RR)`, `F-score`. 
+To understand our generated dataset and formulate a sense of ground truth, we utilize another [python script (`eval.py`) to apply blocking and non privacy-preserving entity resolution, computing three metrics: `Pairs Completeness (PC)`, `Reduction Ratio (RR)`, `F-score`. 
+
+To run `eval.py` for a variety of statistics/metrics, one can run the following commands:
+
+```
+    # basic statistics
+    python eval.py test_data/ds1_output_0.8.csv test_data/ds2_output_0.8.csv
+    # evaluating blocking threshold
+    python eval.py test_data/ds1_output_0.8.csv test_data/ds2_output_0.8.csv --blocking --threshold 0.8
+    
+    # evaluating entity resolution threshold
+    python eval.py test_data/ds1_output_0.8.csv test_data/ds2_output_0.8.csv --er --er-threshold 0.8
+    # evaluating er with blocking
+    python eval.py test_data/ds1_output_0.8.csv test_data/ds2_output_0.8.csv --blocking --threshold 0.8 --er --er-threshold 0.8
+    # estimating entity resolution threshold
+    python eval.py test_data/ds1_output_0.8.csv test_data/ds2_output_0.8.csv --er --search-threshold --epoch 3
+    '''
+```
+
 
 `Fig.3` displays the expected non privacy-preserving ER and blocking results, whereas `fig.4` details the optimal MinHashLSH blocking key size. In our findings, we note that the blocking key size is directly correlated with `b`, or the blocking threshold. 
 
