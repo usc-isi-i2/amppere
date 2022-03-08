@@ -36,11 +36,16 @@ Probability distribution for duplicates: zipf
 Type of modification: typo, ocr, phonetic
 ```
 
-We further perform pre-processing and bi-gram, integer tokenization for each record using a [python script](insert link to pre-processing script).
+We further perform pre-processing and bi-gram, integer tokenization for each record using a [python script](https://github.com/usc-isi-i2/amppere). Additionally, we use [DataSketch](https://github.com/ekzhu/datasketch) for calculating MinHash signatures & LSH blocking keys with the following settings: 
+
+```
+Number of permutations: 128
+Relative importance of false positives: 0.5
+```
 
 ### Expected performance
 
-To understand our generated dataset and formulate a sense of ground truth, we utilize aanother [python script](insert link to pre-processing script) to apply blocking and non privacy-preserving entity resolution, computing three metrics: `Pairs Completeness (PC)`, `Reduction Ratio (RR)`, `F-score`. 
+To understand our generated dataset and formulate a sense of ground truth, we utilize aanother [python script](https://github.com/usc-isi-i2/amppere) to apply blocking and non privacy-preserving entity resolution, computing three metrics: `Pairs Completeness (PC)`, `Reduction Ratio (RR)`, `F-score`. 
 
 ## Sharemind MPC
 
