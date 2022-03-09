@@ -51,6 +51,5 @@ add_executable( bgv-sr ../bgv_sr.cpp )
 add_executable( ckks-sr ../ckks_sr.cpp )
 add_executable( bgv-3pc ../bgv_3pc.cpp )
 add_executable( ckks-3pc ../ckks_3pc.cpp )
-
-### add_executable( blocking-sr ../psi_blocking_ckks_sr.cpp )
-### add_executable( blocking-3pc ../psi_blocking_ckks_3pc.cpp )
+add_executable( b-ckks-sr ../b_ckks_sr.cpp )
+add_executable( b-ckks-3pc ../b_ckks_3pc.cpp )

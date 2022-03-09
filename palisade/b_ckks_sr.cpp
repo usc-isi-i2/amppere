@@ -9,7 +9,7 @@
 #include "csvstream.h"
 #include <sstream>
 #include <chrono>
-#include "psi_blocking_utils.h"
+#include "utils.h"
 
 using namespace std;
 using namespace lbcrypto;
@@ -58,9 +58,9 @@ int main(int argc, char** argv) {
   cc->EvalMultKeyGen(kp1.secretKey);
 
   map<tuple<string, string>, vector<complex<double>>> setA =
-      readFromCSVFile(path + "/../test_data/" + ds1);
+      readFromCSVFile(path + "/../../test_data/" + ds1);
   map<tuple<string, string>, vector<complex<double>>> setB =
-      readFromCSVFile(path + "/../test_data/" + ds2);
+      readFromCSVFile(path + "/../../test_data/" + ds2);
 
   map<int, Plaintext> plain_setA;
   map<int, Plaintext> plain_setB;
@@ -87,9 +87,9 @@ int main(int argc, char** argv) {
   auto start = std::chrono::high_resolution_clock::now();
 
   map<int, vector<string>> blocksA =
-      readBlocks(path + "/../test_data/" + ds1);
+      readBlocks(path + "/../../test_data/" + ds1);
   map<int, vector<string>> blocksB =
-      readBlocks(path + "/../test_data/" + ds2);
+      readBlocks(path + "/../../test_data/" + ds2);
 
   map<string, vector<int>> reversedIndexA;
   map<string, vector<Ciphertext<DCRTPoly>>> encReversedIndexA;
@@ -207,11 +207,6 @@ map<int, vector<Ciphertext<DCRTPoly>>> cand_pairs;
 
   map<int, vector<bool>> results;
 
-  // for (auto mapping : cand_pairs) {
-  //   int row_idx = get<0>(mapping);
-  //   vector<bool> row(setB.size(), 0);
-  //   results[row_idx] = row;
-  // }
 
   map<int, vector<double>> obfu_pairs_clear;
   //map<Ciphertext<DCRTPoly>, vector<bool>> result;
@@ -237,8 +232,6 @@ map<int, vector<Ciphertext<DCRTPoly>>> cand_pairs;
 
   start = std::chrono::high_resolution_clock::now();
 
-  vector<vector<bool>> results;
-
   int psi = 0;
   float threshold = 0.5;
   for (auto pair : obfu_pairs_clear) {
@@ -251,7 +244,7 @@ map<int, vector<Ciphertext<DCRTPoly>>> cand_pairs;
         psi += er;
         vector<bool> row = results[row_idx];
         row[j] = er;
-        results[row] = row;
+        results[row_idx] = row;
       }
     }
   }

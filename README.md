@@ -102,15 +102,21 @@ Our various implementations are located under the `/palisade` directory, which c
 
 Below, we detail each file, what it denotes, and how you can run it:
 
-- `psi_all_comparisons.cpp`: A `full comparison` calculation between 2 datasets using the `VR` set intersection size operator (detailed in the paper as the fastest one for PALISADE). 
+- `all_comparisons.cpp`: A `full comparison` calculation between 2 datasets using the `VR` set intersection size operator (detailed in the paper as the fastest one for PALISADE). 
 
 To run: `./all-comparisons ds1_output_0.5.csv ds2_output_0.5.csv`
 
-- `bgv-sr.cpp`/`ckks-sr.cpp`: An implementation of private-set intersection size methods (e.g. `VR`, `VE`) in their respective cryptographic scheme (e.g.`BGV`, `CKKS`) in the sender-receiver (`SR`) mode. It randomly picks a record from each dataset and compares them with the chosen method input as a user parameter. 
+- `bgv_sr.cpp`/`ckks_sr.cpp`: An implementation of private-set intersection size methods (e.g. `VR`, `VE`) in their respective cryptographic scheme (e.g.`BGV`, `CKKS`) in the sender-receiver (`SR`) mode. It randomly picks a record from each dataset and compares them with the chosen method input as a user parameter. 
 
 To run: `./bgv-sr ds1_output_0.5.csv ds2_output_0.5.csv vr` / `./ckks-sr ds1_output_0.5.csv ds2_output_0.5.csv ve`
 
-- `bgv-3pc.cpp`/`ckks-3pc.cpp`: An implementation of private-set intersection size methods (e.g. `VR`, `VE`) in their respective cryptographic scheme (e.g.`BGV`, `CKKS`) in the three party (`3PC`) mode. It randomly picks a record from each dataset and compares them with the chosen method input as a user parameter. 
+- `bgv_3pc.cpp`/`ckks_3pc.cpp`: An implementation of private-set intersection size methods (e.g. `VR`, `VE`) in their respective cryptographic scheme (e.g.`BGV`, `CKKS`) in the three party (`3PC`) mode. It randomly picks a record from each dataset and compares them with the chosen method input as a user parameter. 
 
 To run: `./bgv-3pc ds1_output_0.5.csv ds2_output_0.5.csv ve` / `./ckks-3pc ds1_output_0.5.csv ds2_output_0.5.csv vr`
+
+- `b_ckks_sr.cpp`/`b_ckks_3pc.cpp`: Our blocking implementations in both the sender-receiver (`SR`) and three party (`3PC`) modes utilizing only the vector rotation (`VR`) private set intersection size method for efficiency. 
+
+To run: `./b-ckks-sr ds1_b_output_0.5.csv ds2_b_output_0.5.csv` / `./b-ckks-3pc ds1_b_output_0.5.csv ds2_b_output_0.5.csv`
+
+Note: Make sure to run the febrl processing script with the `--blocking` flag on in order to generate blocking keys; the blocking implementations expect those to be present in the .csv file inputs.
 

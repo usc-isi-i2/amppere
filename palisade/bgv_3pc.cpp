@@ -8,7 +8,7 @@
 #include <sstream>
 #include <chrono>
 #include <cstdlib>
-#include "psi_blocking_utils.h"
+#include "utils.h"
 
 using namespace std;
 using namespace lbcrypto;

@@ -9,7 +9,7 @@
 #include "csvstream.h"
 #include <sstream>
 #include <chrono>
-#include "psi_blocking_utils.h"
+#include "utils.h"
 
 using namespace std;
 using namespace lbcrypto;
@@ -103,9 +103,9 @@ int main(int argc, char** argv) {
   kpMultiparty = cc->MultipartyKeyGen(secretKeys);
 
   map<tuple<string, string>, vector<complex<double>>> setA =
-      readFromCSVFile(path + "/../test_data/" + ds1);
+      readFromCSVFile(path + "/../../test_data/" + ds1);
   map<tuple<string, string>, vector<complex<double>>> setB =
-      readFromCSVFile(path + "/../test_data/" + ds2);
+      readFromCSVFile(path + "/../../test_data/" + ds2);
 
   map<int, Plaintext> plain_setA;
   map<int, Plaintext> plain_setB;
@@ -133,9 +133,9 @@ int main(int argc, char** argv) {
   auto start = std::chrono::high_resolution_clock::now();
 
   map<int, vector<string>> blocksA =
-      readBlocks(path + "/../test_data/" + ds1);
+      readBlocks(path + "/../../test_data/" + ds1);
   map<int, vector<string>> blocksB =
-      readBlocks(path + "/../test_data/" + ds2);
+      readBlocks(path + "/../../test_data/" + ds2);
 
   map<string, vector<int>> reversedIndexA;
   map<string, vector<Ciphertext<DCRTPoly>>> encReversedIndexA;
