@@ -4,16 +4,16 @@ Code and datasets for the CIKM 2021 paper [A Universal Abstract Machine for Priv
 
 ```bibtex
 @inbook{10.1145/3459637.3482318,
-author = {Yao, Yixiang and Ghai, Tanmay and Ravi, Srivatsan and Szekely, Pedro},
-title = {AMPPERE: A Universal Abstract Machine for Privacy-Preserving Entity Resolution Evaluation},
-year = {2021},
-isbn = {9781450384469},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/3459637.3482318},
-booktitle = {Proceedings of the 30th ACM International Conference on Information & Knowledge Management},
-pages = {2394–2403},
-numpages = {10}
+    author = {Yao, Yixiang and Ghai, Tanmay and Ravi, Srivatsan and Szekely, Pedro},
+    title = {AMPPERE: A Universal Abstract Machine for Privacy-Preserving Entity Resolution Evaluation},
+    year = {2021},
+    isbn = {9781450384469},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3459637.3482318},
+    booktitle = {Proceedings of the 30th ACM International Conference on Information & Knowledge Management},
+    pages = {2394–2403},
+    numpages = {10}
 }
 ```
 
@@ -77,12 +77,99 @@ Note: `eval.py` can only be run, after a sample dataset (e.g. `ds2_output_0.8.cs
 
 `Fig.3` displays the expected non privacy-preserving ER and blocking results, whereas `fig.4` details the optimal MinHashLSH blocking key size. In our findings, we note that the blocking key size is directly correlated with `b`, or the blocking threshold. 
 
+`lsh_optimal_params.py` is for getting the optimal LSH parameter combinations with given `threshold` and `num_perm`.
+
 ### Environment Settings
 
 Our experiments (for both Sharemind and PALISADE) are run on three virtual `Ubuntu
 18.04.4 LTS` servers each with `2 CPUs from Intel Xeon CPU E5-2690 v4 @ 2.60GHz and 4GB` memory. All servers are in the same network and the average PING latency is around `0.12-0.23` ms. Additionally, to ensure a fair comparison between platforms we compile PALISADE with the following flag `-DWITH-NATIVEOPT = 1`, evaluate only single threaded runtimes (`export OMP-NUM-THREADS = 1`), and turn CPU scaling off. Additionally, our toggle-able pipeline component of `obfuscation` is turned off.
 
 ## Sharemind MPC
+
+We use [Sharemind MPC Academic Server](https://sharemind.cyber.ee/sharemind-mpc/) (version 2019.03) for the experiments. Please set up the computation nodes according to its documentation first. All source code is under `/sharemind`.
+
+### Jaccard similarity
+
+`jaccard` is for 4 different Jaccard similarity implementations.
+
+```
+# compile SecreC program
+sm_compile.sh secrec/*.sc
+
+# compile client program
+mkdir build
+cd build
+cmake ..
+make
+
+# start server and run
+sm_start_servers.sh
+./jaccard --a 0x6c6c6f 0x68656c 0x656c6c --b 0x6c6c65 0x68656c 0x656c6c --t 0.4
+```
+
+### Run End-to-end program
+
+0. On server side, configure keydb. The keydb name has to be "dbhost". On client side, compile all SecreC and client programs.
+
+```
+[Host host]
+; The name to access this host from the SecreC application.
+Name = dbhost
+```
+
+1. On each client, make a CSV file which has three columns (comma as delimiter), the record id has to be in consecutive number:
+
+```
+id,original_id,tokens
+0,rec-242-org,0x656e 0x6e67 0x6720 0x2066
+1,rec-160-dup-2,0x6672 0x7265 0x6520 0x2066 0x6620 0x2033 0x3331 0x3120
+...
+```
+
+Then upload data to keydb on each client. 
+
+```
+# build/upload --id {string} --tokens {white-space separated numbers}
+tail -n +2 <input-csv-file.csv> | awk -F',' '{print "build/upload --key "$1" --tokens "$3}' | xargs -I {} sh -c "{}"
+```
+
+2. Compute and find pairs from one of the clients.
+
+```
+build/link --a_prefix ds1_ --a_size 2 --b_prefix ds2_ --b_size 8 --t 0.5
+```
+
+### Run program with blocking
+
+0. In keydb config file, `ScanCount` needs to be set to a value greater than the total number of records in keydb. Total number of records can be computed as `26 * (a_size + b_size)` in which each record occupies 25 blocking keys and 1 record key when threshold is set to 0.5.
+
+1. It is similar to non-blocking version, but need an additional column which contains blocking keys. 
+
+```
+id,original_id,tokens,blocking_keys
+0,rec-242-org,0x656e 0x6e67 0x6720 0x2066,2537ac800947b99c9d0d 3919229da0a2e549c9b0
+...
+```
+
+For Febrl dataset, the following script can be called to generate such file.
+
+```
+python preprocessing_febrl.py <input.csv> <output.csv> \
+        --ngram=2 --blocking --num-perm=128 --threshold=0.5
+```
+
+Then you need to upload tokens with blocking keys
+
+```
+# build/upload --id {id} --tokens {tokens} --prefix {prefix} --bkeys {blocking keys}
+tail -n +2 <input-csv-file.csv> | awk -F',' '{print "build/upload --id "$1" --tokens "$3" --bkeys "$4" --prefix ds1_"}' | xargs -I {} sh -c "{}"
+```
+
+3. Compute and find pairs with blocking enabled.
+
+```
+build/link --a_prefix ds1_ --a_size 2 --b_prefix ds2_ --b_size 8 --t 0.5 --blocking
+```
 
 ## PALISADE
 
