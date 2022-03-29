@@ -1,0 +1,57 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.12)
+PROJECT(JACCARD)
+
+INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/config.local" OPTIONAL)
+INCLUDE("${CMAKE_CURRENT_BINARY_DIR}/config.local" OPTIONAL)
+
+ADD_COMPILE_OPTIONS(
+  "-std=c++14" "-Wall" "-Wextra" "-O2"
+  "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-ggdb>"
+  "$<$<NOT:$<STREQUAL:$<CONFIGURATION>,Release>>:-fno-omit-frame-pointer>"
+  "$<$<STREQUAL:$<CONFIGURATION>,Release>:-DNDEBUG>"
+  "$<$<STREQUAL:$<CONFIGURATION>,Release>:-fomit-frame-pointer>"
+)
+
+SET(Boost_USE_STATIC_RUNTIME OFF)
+FIND_PACKAGE(Boost COMPONENTS program_options system REQUIRED)
+FIND_PACKAGE(LogHard 0.4.0 REQUIRED)
+FIND_PACKAGE(SharemindLibController REQUIRED)
+
+INCLUDE_DIRECTORIES(
+    ${Boost_INCLUDE_DIRS}
+    ${LogHard_INCLUDE_DIRS}
+    ${SharemindLibController_INCLUDE_DIRS}
+)
+
+ADD_DEFINITIONS(
+    ${LogHard_DEFINITIONS}
+    ${SharemindLibController_DEFINITIONS}
+    "-D__STDC_LIMIT_MACROS"
+)
+
+SET(JACCARD_LIBRARIES
+    ${Boost_LIBRARIES}
+    ${LogHard_LIBRARIES}
+    ${SharemindLibController_LIBRARIES}
+)
+
+FILE(GLOB_RECURSE JACCARD_SECREC "${CMAKE_CURRENT_SOURCE_DIR}/secrec/*.sc")
+
+SET(JACCARD_FILES ${JACCARD_SECREC})
+
+ADD_CUSTOM_TARGET("include_jaccard_Files_in_IDE"
+                  SOURCES ${JACCARD_FILES})
+
+ADD_EXECUTABLE( jaccard src/jaccard.cpp )
+TARGET_LINK_LIBRARIES( jaccard ${JACCARD_LIBRARIES} )
+INSTALL(TARGETS jaccard RUNTIME DESTINATION "bin")
+ADD_EXECUTABLE( upload src/upload.cpp )
+TARGET_LINK_LIBRARIES( upload ${JACCARD_LIBRARIES} )
+INSTALL(TARGETS upload RUNTIME DESTINATION "bin")
+ADD_EXECUTABLE( link src/link.cpp )
+TARGET_LINK_LIBRARIES( link ${JACCARD_LIBRARIES} )
+INSTALL(TARGETS link RUNTIME DESTINATION "bin")
+ADD_EXECUTABLE( keydb_tool src/keydb_tool.cpp )
+TARGET_LINK_LIBRARIES( keydb_tool ${JACCARD_LIBRARIES} )
+INSTALL(TARGETS keydb_tool RUNTIME DESTINATION "bin")
+
